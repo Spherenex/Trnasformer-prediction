@@ -5,6 +5,7 @@ import LineFallDetectionDashboard from './components/Linefall'
 import SingleAxis from './components/SingleAxis'
 import TransformerPrediction from './components/TranformerPrediction'
 import TransformerService from './components/TransformerService'
+import JetEngineMonitor from './components/Jetdatalog'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,6 +16,7 @@ function App() {
       {/* <SingleAxis/> */}
       <TransformerPrediction />
       {/* <TransformerService /> */}
+      {/* <JetEngineMonitor /> */}
     </>
   )
 }

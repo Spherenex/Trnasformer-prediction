@@ -77,7 +77,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>Transformer Monitoring System</h1>
+      <h1>AI Based Transformer Prediction System</h1>
       
       {showAlert && (
         <div className="alert">

@@ -7,7 +7,9 @@ const App = () => {
     Voltage: 0,
     Vibration: 0,
     Humidity: 0,
-    Magnitude: 0
+    Magnitude: 0,
+    Power: 0,
+    Current: 0
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -77,7 +79,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>AI Based Transformer Prediction System</h1>
+      <h1>Automatic Battery Monitoring Using ML</h1>
       
       {showAlert && (
         <div className="alert">
@@ -86,29 +88,29 @@ const App = () => {
       )}
       
       <div className="dashboard">
-        <div className={`card ${transformerData.Temperature > 35 ? 'warning' : ''}`}>
-          <h2>Temperature</h2>
-          <div className="value">{transformerData.Temperature}°C</div>
-          {transformerData.Temperature > 35 && (
+        <div className={`card ${transformerData.Power > 35 ? 'warning' : ''}`}>
+          <h2>Power</h2>
+          <div className="value">{transformerData.Power}V</div>
+          {/* {transformerData.Power > 35 && (
             <div className="status critical">Critical</div>
-          )}
+          )} */}
         </div>
         
-        <div className={`card ${transformerData.Voltage < 5 ? 'warning' : ''}`}>
-          <h2>Voltage</h2>
-          <div className="value">{transformerData.Voltage} V</div>
-          {transformerData.Voltage < 5 && (
+        <div className={`card ${transformerData.Current < 5 ? 'warning' : ''}`}>
+          <h2>Current</h2>
+          <div className="value">{transformerData.Current}A</div>
+          {/* {transformerData.Current < 5 && (
             <div className="status critical">Critical</div>
-          )}
+          )} */}
         </div>
         
-        <div className={`card ${transformerData.Vibration === 1 ? 'warning' : ''}`}>
+        {/* <div className={`card ${transformerData.Vibration === 1 ? 'warning' : ''}`}>
           <h2>Vibration</h2>
           <div className="value">{transformerData.Vibration}</div>
           {transformerData.Vibration === 1 && (
             <div className="status critical">Critical</div>
           )}
-        </div>
+        </div> */}
         
         {/* <div className="card">
           <h2>Humidity</h2>
@@ -190,10 +192,7 @@ const App = () => {
           font-weight: bold;
         }
         
-        .critical {
-          background-color: #ff4d4f;
-          color: white;
-        }
+      
         
         .alert {
           background-color: #ff4d4f;
